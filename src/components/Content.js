@@ -10,11 +10,10 @@ const Content = ({ children, contentId }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const { data } = await content.get(`/${contentId}`);
-			return data;
+			setCount(data.count);
+			setText(data.data);
 		};
-		const { count, data } = fetchData();
-		setCount(count);
-		setText(data);
+		fetchData();
 	}, [contentId]);
 
 	return (

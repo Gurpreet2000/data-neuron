@@ -1,9 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-	baseURL: 'http://localhost:5000',
-	referrerPolicy: 'unsafe-url',
-	headers: {
-		mode: 'no-cors',
-	},
+	baseURL: 'https://data-neuron-backend.herokuapp.com',
 });
