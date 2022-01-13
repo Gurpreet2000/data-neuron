@@ -1,0 +1,60 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+.btn {
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	padding: 0.75em 1.5em;
+	margin: 0.5em;
+}
+
+.btn:hover {
+	opacity: 0.75;
+}
+
+.btn:active {
+	opacity: 0.5;
+}
+
+.bg-warning {
+	background-color: rgb(221, 169, 0);
+}
+
+.bg-primary {
+	background-color: rgb(0, 110, 255);
+	color: white;
+}
+.bg-success {
+	background-color: green;
+	color: white;
+}
+
+.btn:disabled {
+	opacity: 0.5;
+}
+
+.split-col {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+}
+
+.split-row {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.gutter {
+	background-color: #999;
+}
