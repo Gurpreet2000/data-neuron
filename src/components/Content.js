@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import content from '../api/content';
 
@@ -8,10 +7,15 @@ const Content = ({ children, contentId }) => {
 	const [method, setMethod] = useState('get');
 	const [count, setCount] = useState(0);
 
-	useEffect(async () => {
-		const { data } = await content.get(`/${contentId}/count`);
-		setCount(data.count);
-	}, []);
+	useEffect(() => {
+		const fetchData = async () => {
+			const { data } = await content.get(`/${contentId}`);
+			return data;
+		};
+		const { count, data } = fetchData();
+		setCount(count);
+		setText(data);
+	}, [contentId]);
 
 	return (
 		<div className="content">
@@ -27,7 +31,7 @@ const Content = ({ children, contentId }) => {
 					<button
 						className="btn bg-success"
 						onClick={async () => {
-							const res = await content[method]('/', {
+							await content[method]('/', {
 								id: contentId,
 								data: text,
 								count,

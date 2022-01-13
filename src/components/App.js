@@ -15,7 +15,6 @@ const App = () => {
 			{...splitProps}
 			direction="vertical"
 			cursor="row-resize"
-			direction="vertical"
 			className="split-row"
 		>
 			<Split
